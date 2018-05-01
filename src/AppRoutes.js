@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import Home from './components/Home/Home.js'
 
 class Routes extends Component {
   render() {
@@ -7,9 +8,7 @@ class Routes extends Component {
       <Switch>
         <Route
           path="/"
-          render={() => {
-            return "home";
-          }}
+          component={Home}
         />
       </Switch>
     );
