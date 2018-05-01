@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname,'dist'),
-    publicPath: path.resolve(__dirname, 'dist'),
+    // publicPath: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
   devServer: {
@@ -37,12 +37,25 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.json/,
+        test: /\.json$/,
         use: 'json-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          quiet: true,
+          failOnError: false,
+          failOnWarning: false,
+          emitError: false,
+          emitWarning: false
+        }
       }
     ]
   },

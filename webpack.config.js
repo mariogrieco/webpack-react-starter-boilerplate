@@ -25,7 +25,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: ExtractTextPlugin.extract({
           use: [
             {
@@ -42,7 +42,7 @@ module.exports = {
         })
       },
       {
-        test: /\.json/,
+        test: /\.json$/,
         use: 'json-loader'
       }
     ]
