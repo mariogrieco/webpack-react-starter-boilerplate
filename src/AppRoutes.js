@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import {
-  Switch,
-  Route
-} from 'react-router-dom'
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 
 class Routes extends Component {
-  render () {
+  render() {
     return (
       <Switch>
-        <Route path='/' render={() => {
-          return ('home')
-        }} />
+        <Route
+          path="/"
+          render={() => {
+            return "home";
+          }}
+        />
       </Switch>
-    )
+    );
   }
 }
 
-export default Routes
+export default Routes;

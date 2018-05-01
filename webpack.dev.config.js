@@ -50,7 +50,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          quiet: true,
+          quiet: false,
           failOnError: false,
           failOnWarning: false,
           emitError: false,
