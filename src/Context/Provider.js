@@ -6,7 +6,7 @@ import {
 
 // provider Actions
 class RootProvider extends Component {
-  constructor (props) {
+  constructor (props) { 
     super(props);
     this.state = initialState;
     this.state.actions = {

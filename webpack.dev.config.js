@@ -4,6 +4,7 @@ const { PORT } = require('./CONFIG.js')
 
 module.exports = {
   target: 'web',
+  mode: 'development',
   entry: {
     main: path.resolve(__dirname, 'index.js')
   },
@@ -41,10 +42,6 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.json$/,
-        use: 'json-loader'
-      },
-      {
         enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
@@ -62,13 +59,16 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: 'public/images/*'
+        from: 'public/images/*',
       },
       {
         from: 'public/index.html'
       },
       {
-        from: 'public/*.css'
+        from: 'public/bootstrap.min.css'
+      },
+      {
+        from: 'public/bootstrap-theme.min.css'
       }
     ])
   ]

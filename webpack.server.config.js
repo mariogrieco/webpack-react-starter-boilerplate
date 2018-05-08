@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const config = {
   target: 'node',
+  mode: 'production',
   entry: path.resolve(__dirname, '../src/App.js'),
   output: {
     path: path.resolve(__dirname,'../dist/SSR'),
@@ -23,11 +24,6 @@ const config = {
                 presets: ['es2015', 'stage-2', 'react']
               }
             },
-          },
-          {
-            test: /\.json/,
-            exclude: /node_modules/,
-            loader: 'json-loader'
           },
           {
             test: /\.(css|scss)/,
@@ -54,7 +50,10 @@ const config = {
             from: 'public/index.html'
           },
           {
-            from: 'public/*.css'
+            from: 'public/bootstrap.min.css'
+          },
+          {
+            from: 'public/bootstrap-theme.min.css'
           }
         ]),
         new CleanWebpackPlugin(['dist/SSR'])

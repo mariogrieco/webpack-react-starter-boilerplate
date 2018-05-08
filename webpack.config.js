@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   target: 'web',
+  mode: 'production',
   entry: {
     main: path.resolve(__dirname, 'index.js')
   },
@@ -40,10 +41,6 @@ module.exports = {
             }
           ]
         })
-      },
-      {
-        test: /\.json$/,
-        use: 'json-loader'
       }
     ]
   },
@@ -57,7 +54,10 @@ module.exports = {
         from: 'public/index.html'
       },
       {
-        from: 'public/*.css'
+        from: 'public/bootstrap.min.css'
+      },
+      {
+        from: 'public/bootstrap-theme.min.css'
       }
     ]),
     new CleanWebpackPlugin(['dist'], {root: __dirname})
